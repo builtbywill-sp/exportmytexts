@@ -1,0 +1,115 @@
+:root {
+  --bg: #1c1a17;
+  --text: #f4eadc;
+  --accent: #ffc940;
+  --btn-bg: #3a3027;
+  --btn-hover: #ffb347;
+  --btn-shadow: #b77a28;
+  --input-bg: #4a3f35;
+  --input-border: #7b6a58;
+  --header-accent: #ffd477;
+  --label-color: #ffe4b3;
+  --green-glow: #6ef78d;
+  --message-box-bg: #1e1a15;
+  --message-box-border: #ffe9b1;
+}
+
+* {
+  box-sizing: border-box;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+body {
+  background-color: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+header, footer {
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 1rem;
+  color: var(--header-accent);
+}
+
+h1, h2 {
+  color: var(--accent);
+}
+
+.btn {
+  display: inline-block;
+  margin: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  background-color: var(--btn-bg);
+  color: var(--text);
+  border: 1px solid var(--accent);
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  font-weight: bold;
+  box-shadow: 0 2px 0 var(--btn-shadow);
+}
+
+.btn:hover {
+  background-color: var(--btn-hover);
+  color: #1c1a17;
+  transform: translateY(-1px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4);
+}
+
+.features ul {
+  list-style: none;
+  padding: 0;
+}
+
+.features li {
+  margin: 0.5rem 0;
+  background: var(--btn-bg);
+  padding: 0.75rem;
+  border-radius: 4px;
+}
+
+input,
+select {
+  width: 100%;
+  padding: 0.4rem;
+  margin-top: 0.25rem;
+  background-color: var(--input-bg);
+  color: var(--text);
+  border: 1px solid var(--input-border);
+  border-radius: 4px;
+}
+
+label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+  color: var(--label-color);
+}
+
+.message-box {
+  margin-top: 1.5rem;
+  border: 1px dashed var(--message-box-border);
+  padding: 1rem;
+  background-color: var(--message-box-bg);
+  color: var(--text);
+  font-size: 0.85rem;
+  border-radius: 5px;
+  white-space: pre-wrap;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem;
+}
