@@ -1,42 +1,32 @@
+# 📤 ExportMyTexts
 
+**Secure, offline message extraction made simple.**  
+Built for parents, professionals, and individuals who need clean message records — without trusting a cloud.
 
+## 🛡 What It Does
 
-# 🧾 iExtract Landing Page
+- Extracts iMessage + SMS data from your `chat.db` (macOS/iPhone backups)
+- Generates PDF or CSV reports for printing, court, or personal use
+- 100% offline — no logins, no accounts, no cloud upload
 
-This is the standalone landing page for **iExtract** — a lightweight, fully offline iMessage export tool. Built with performance and privacy in mind, this site showcases the brand and serves as the entry point for users.
+## 🔐 Privacy First
 
-## 🌵 Theme
+- Files are never stored, sold, or shared  
+- All data is deleted immediately after processing  
+- Legal access required — waiver signed before any work begins
 
-The site uses a custom "Desert Dossier" UI theme to match the brown/offline aesthetic of the iExtract desktop app. Styled with JetBrains Mono and terminal-inspired tones.
+## ⚙️ How It Works
 
-## 🧰 Stack
+1. You locate your `chat.db` backup
+2. You zip it and send via ProtonMail or handoff
+3. We process and return clean reports
 
-- HTML / CSS 
-- Optimized for mobile and responsive across devices
-- No external dependencies
-- Fully static (host anywhere)
+## 🚫 Disclaimers
 
-## 🚀 Usage
+- You must legally own the messages you request
+- We do not guarantee court admissibility
+- Use of the platform = acceptance of all terms
 
-To preview locally:
+## 📬 Questions?
 
-```bash
-open index.html
-```
-
-Or drag into your browser.
-
-## 📂 Structure
-
-- `/assets` – logo and image files
-- `/index.html` – main landing page
-- `/styles.css` – site theme
-
-## 🧪 Status
-
-✅ MVP complete  
-🔧 Future: connect to app store download, Stripe flow, or email list
-
----
-
-© Silent Prototype Labs — 2025
+Email [help@exportmytexts.com](mailto:help@exportmytexts.com) or visit the [Legal](https://exportmytexts.com/apps.html) page for full disclaimers.
