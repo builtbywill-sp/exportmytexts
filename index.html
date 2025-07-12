@@ -1,171 +1,228 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-pV6X2Rbd7s4ZnRkfvB1VRhrjM+MqlW6K4M7e5+3OXYaEz1+MG5/fRr+u1AA7e6x6eWgtIdbdAUGfYqG8dR8YxA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Export My Texts — Secure Message Extraction</title>
-  <link rel="stylesheet" href="index.css" />
-  <meta name="description" content="Offline, secure message exports for everyday people. No cloud, no hassle — just results you can trust.">
+    <link rel="icon" type="image/png" href="/assets/logo.png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BuiltbyWill | Software Developer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/721edd9079.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
 </head>
-<body>
-  <section class="legal-section">
-    <section class="container">
-      <div class="row" style="border: 2px solid red; border-radius: 10px; padding: 1rem;">
-        <div class="column">
-          <h3>Legal Notice</h3>
-          <p>Please ensure you read all <a href="/apps.html">legal disclaimers</a>. A waiver will be signed before any data is exchanged.</p>
-        </div>
-      </div>
-    </section>
-  </section>
-  <header>
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h1>Export<span>MyTexts</span></h1>
-          <nav>
-            <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#services">Services</a></li>
-              <li><a href="#how">How It Works</a></li>
-              <li><a href="#trust">Trust & Security</a></li>
-              <li><a href="#contact">Contact</a></li>
+
+<body class="dark">
+    <section id="landing-page" onmousemove="moveBackground(event)">
+        <nav>
+            <figure>
+                <img id="personal-logo" src="/assets/logo.png" alt="Open Modal" onclick="toggleModal()" style="cursor: pointer;">
+            </figure>
+            <ul class="nav__link--list" >
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="#pricing" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Pricing</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover-effect--black
+                    ">Contact</a>
+                </li>
             </ul>
-          </nav>
-        </div>
-      </div>
-    </section>
-  </header>
+        </nav>
+        <header class="header">
+            <div class="header__content">
+                <h1 class="title">Export Your</h1>
+                <h1 class="title orange">iMessages</h1>
+                <p class="header__para">Court-ready message exports with zero cloud and zero stress. No logins. No subscriptions. Just a clean PDF report sent straight to your inbox.<br>Click below to get started — we’ll walk you through it.</p>
+                <div class="social__list">
+                    <a href="https://www.linkedin.com/in/wnbrown/" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/builtbywill-sp" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-github"></i>
+                    </a>
+                    <a href="https://www.facebook.com/profile.php?id=61578325046701" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/exportmytexts" target="_blank" class="social__link click">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="mailto:help@exportmytexts.com" class="social__link click">
+                        <i class="fa-solid fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </header>
+        <a href="#">
+        <button class="mail__button click" onclick="toggleModal()" style="background-color: #00213A; border-radius: 50%; width: 48px; height: 48px; display: flex; align-items: center; justify-content: center;">
+            <img src="/assets/logo.png" alt="Open Contact Modal" style="width: 24px; height: 24px;" />
+        </button>
+        </a>
+        <a href="#" class="scroll">
+            <div class="scroll__icon click"></div>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about modal__about--pricing" style="color: #222; background-color: #f8f9fb; border-radius: 12px; box-sizing: border-box;">
+                <h3 class="modal__title modal__about-title--about" style="color: #222;">What is ExportMyTexts?</h3>
+                <h4 class="modal__sub-title modal__sub-title--about"><b class="orange">Encrypted Export Tool</b></h4>
+                <p class="modal__para" style="color: #222;">
+                ExportMyTexts helps you securely extract iMessages from your iPhone backup — no app installs, no cloud services, no confusion. Just a clean CSV or PDF ready for court, review, or records.<br><br>
+                We’ll show you how to locate your backup file, walk you through the secure upload process, and email back your formatted export. Whether it’s for legal use, personal records, or digital cleanup — we keep it simple and private.
+                </p>
+                <div class="modal__languages">
+                    <img src="/assets/exportmytexts-logo.png" alt="ExportMyTexts Logo" style="max-width: 240px; margin-top: 1rem; display: block;" />
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fa-solid fa-xmark modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Get Your Messages Exported</h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">We’ll respond within 24 hours with secure upload instructions.</h3>
+                <form id="contact__form" onsubmit="openMailClient(event)">
+                  <div class="form__item">
+                    <label class="form__item--label" for="name">Name</label>
+                    <input class="input" id="user_name" type="text" required />
+                  </div>
+                  <div class="form__item">
+                    <label class="form__item--label">E-mail</label>
+                    <input class="input" id="user_email" type="email" required />
+                  </div>
+                  <div class="form__item">
+                    <label class="form__item--label">Message</label>
+                    <textarea class="input" id="user_message" type="text" required></textarea>
+                  </div>
+                  <button id="contact__submit" class="form__submit">Send it my way!</button>
+                </form>
+                    <div class="modal__overlay modal__overlay--loading">
+                        <i class="fa-solid fa-circle-notch"></i>
+                    </div>
+                    <div class="modal__overlay modal__overlay--success">
+                        Thanks for the message! Looking forward to speaking to you soon!
+                    </div>
+                    </div>
+                    </div>
 
-  <section class="hero">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h2>Export Your Texts, Safely and Privately.</h2>
-          <p>No accounts. No cloud. Just fast, encrypted reports — ready when you are.</p>
-          <a href="#contact" class="cta-button">Start My Export</a>
-        </div>
-      </div>
-    </section>
-  </section>
 
-  <section class="trust-strip">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <p>Trusted by real people: parents, professionals, and individuals protecting what matters.</p>
-          <p><strong>100% offline.</strong> <strong>We never store your data.</strong></p>
-        </div>
-      </div>
-    </section>
-  </section>
 
-  <section id="services" class="info-section">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h3>Services for Individuals</h3>
-          <ul>
-            <li>iMessage & SMS Database Extraction</li>
-            <li>CSV Report Generation</li>
-            <li>ProtonMail or Encrypted Uploads</li>
-            <li>PDF or CSV formats ready for printing or archiving</li>
-          </ul>
-        </div>
-      </div>
     </section>
-  </section>
 
-  <section id="how" class="info-section">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h3>How It Works</h3>
-          <ul class="fa-ul">
-            <li><span class="fa-li"><i class="fas fa-search-location"></i></span>Works if you have a Mac and iPhone — just locate your <code>chat.db</code> backup file</li>
-            <li><span class="fa-li"><i class="fas fa-folder-zip"></i></span>Zip the file(s) into a single folder</li>
-            <li><span class="fa-li"><i class="fas fa-shield-alt"></i></span>Send the folder securely via ProtonMail or offline method</li>
-            <li><span class="fa-li"><i class="fas fa-file-export"></i></span>We export and return the report — full or contact-specific, your choice</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </section>
 
-  <section class="info-section">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h3>Security First</h3>
-          <p><strong>We never store your data.</strong> Upload through ProtonMail or drop your <code>chat.db</code> file directly. Everything runs locally — nothing touches the cloud.</p>
-        </div>
-      </div>
-    </section>
-  </section>
 
-  <section id="trust" class="info-section">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h3>Why People Trust Us</h3>
-          <p>We don’t ask you to log in, and we don’t send your data anywhere. Everything is handled locally and returned in clean, court-friendly format.</p>
-          <p><strong>Privacy isn’t a feature. It’s the foundation.</strong></p>
+    <section id="pricing">
+        <div class="container">
+            <div class="row">
+                <h1 class="section__title">Pricing <span class="orange">Options</span></h1>
+                <p class="section__description">Simple, secure pricing. Every export includes timestamps, sender/recipient info, and message content. Files up to 200MB are covered — extra-large exports may cost more.</p>
+                <style>
+                  .pricing__table {
+                    width: 100%;
+                    border-collapse: collapse;
+                  }
+                  .pricing__table td {
+                    padding: 16px 12px;
+                    vertical-align: top;
+                  }
+                  .pricing__table tr {
+                    border-bottom: 1px solid #ddd;
+                  }
+                  .pricing__table td:first-child {
+                    white-space: nowrap;
+                    width: 160px;
+                    font-weight: bold;
+                  }
+                  .pricing__table td:last-child {
+                    word-wrap: break-word;
+                    -webkit-hyphens: auto;
+                    -ms-hyphens: auto;
+                    hyphens: auto;
+                  }
+                  @media (max-width: 600px) {
+                    .pricing__table,
+                    .pricing__table tr,
+                    .pricing__table td {
+                      display: block;
+                      width: 100%;
+                    }
+                    .pricing__table td:first-child {
+                      width: auto;
+                      white-space: normal;
+                      margin-bottom: 0.5em;
+                    }
+                    .pricing__table tr {
+                      border-bottom: none;
+                      margin-bottom: 1em;
+                      background: none;
+                    }
+                  }
+                </style>
+                <table class="pricing__table">
+                  <tbody>
+                    <tr class="pricing__row--standard">
+                      <td><strong><span class="pricing__title">Standard Export</span> — <span class="pricing__price">$25</span></strong></td>
+                      <td>Includes timestamps, message IDs, sender/recipient labels, and message content. Max file size: 200MB.</td>
+                    </tr>
+                    <tr class="pricing__row--detailed">
+                      <td><strong><span class="pricing__title">Detailed Export</span> — <span class="pricing__price">$50</span></strong></td>
+                      <td>Everything in Standard Export plus attachments and contact merging. Max file size: 200MB. Larger files: +$25.</td>
+                    </tr>
+                    <tr class="pricing__row--filter">
+                      <td><strong><span class="pricing__title">Filter by Number</span> — <span class="pricing__price">$10</span></strong></td>
+                      <td>Optional add-on per number you’d like filtered in the export.</td>
+                    </tr>
+                  </tbody>
+                </table>
+            </div>
         </div>
-      </div>
     </section>
-  </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
 
-  <section class="info-section">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h3>Why Choose Us</h3>
-          <ul>
-            <li>Offline & Encrypted</li>
-            <li>Works if you have a computer and an iPhone</li>
-            <li>No app installs needed</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </section>
 
-  <section id="contact" class="contact-section">
-    <section class="container">
-      <div class="row">
-        <div class="column">
-          <h3>Contact Us</h3>
-          <p>Have a computer and an iPhone? That’s all you need. Just say hello and we’ll send step-by-step instructions to locate your <code>chat.db</code> file — whether you’re using macOS or Windows, iCloud or local backups.</p>
-          <p>Email us at <strong><a href="mailto:help@exportmytexts.com">help@exportmytexts.com</a></strong>. For added security, we recommend using ProtonMail.</p>
-        </div>
-      </div>
-    </section>
-  </section>
+                <figure>
+                    <img class="footer__logo" src="/assets/logo.png" alt="">
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://www.linkedin.com/in/wnbrown/" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">LinkedIn</a>
+                    <a href="https://github.com/builtbywill-sp" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">GitHub</a>
+                    <a href="https://www.facebook.com/profile.php?id=61578325046701" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">Facebook</a>
+                    <a href="https://www.instagram.com/exportmytexts" class="footer__social--link link__hover-effect link__hover-effect--white" target="_blank">Instagram</a>
+                    <a href="#" class="footer__social--link link__hover-effect link__hover-effect--white" onclick="toggleModal()">Contact</a>
+                </div>
 
-  <section class="info-section">
-    <section class="container">
-      <div class="row">
-        <div class="column" style="border: 2px solid red; border-radius: 10px; padding: 1rem;">
-          <h3>Legal Disclaimers</h3>
-          <ul>
-            <li>Users must own or have legal access to the message data being extracted.</li>
-            <li>We do not store, sell, or share any data — all files are deleted after processing.</li>
-            <li>Services are provided as-is for informational and archival use only.</li>
-            <li>Exported reports are intended to aid memory, documentation, or lawful review.</li>
-            <li>Clients are responsible for verifying admissibility in any legal setting.</li>
-            <li>Secure methods (such as ProtonMail) are recommended for all file transfers.</li>
-            <li>A waiver of responsibility will be signed prior to any file processing.</li>
-            <li>Internet access may be used for queries or tooling but never for cloud upload.</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-  </section>
-  <footer>
-    <section class="container">
-      <p>&copy; 2025 Export My Texts — A Silent Prototype Initiative</p>
-    </section>
-  </footer>
+                <div class="footer__copyright">ExportMyTexts &copy; 2025 | Built by William Brown</div>
+            </div>
+
+
+    </footer>
+  <script>
+    function openMailClient(event) {
+      event.preventDefault();
+      const name = document.getElementById("user_name").value;
+      const email = document.getElementById("user_email").value;
+      const message = document.getElementById("user_message").value;
+
+      const subject = `New message from ${name}`;
+      const body = `Name: ${name}%0D%0AEmail: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+      const mailtoLink = `mailto:help@exportmytexts.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+      window.location.href = mailtoLink;
+    }
+  </script>
 </body>
+
 </html>

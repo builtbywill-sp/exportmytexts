@@ -1,0 +1,72 @@
+let isModalOpen = false;
+let contrastToggle = false;
+const scaleFactor = 1 / 20;
+
+function moveBackground(event) {
+  const shapes = document.querySelectorAll(".shape");
+  const x = event.clientX * scaleFactor;
+  const y = event.clientY * scaleFactor;
+
+  for (let i = 0; i < shapes.length; ++i) {
+    const isOdd = i % 2 !== 0;
+    const boolInt = isOdd ? -1 : 1;
+    shapes[i].style.transform = `translate(${x * boolInt}px, ${y * boolInt}px)`;
+  }
+}
+
+function toggleContrast() {
+  contrastToggle = !contrastToggle;
+  if (contrastToggle) {
+    document.body.classList.add("dark-theme");
+  } else {
+    document.body.classList.remove("dark-theme");
+  }
+}
+
+function contact(event) {
+  event.preventDefault();
+  const loading = document.querySelector(".modal__overlay--loading");
+  const success = document.querySelector(".modal__overlay--success");
+
+  loading.classList.add("modal__overlay--visible");
+
+  fetch("http://localhost:3000/send", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: event.target.user_name.value,
+      email: event.target.user_email.value,
+      message: event.target.message.value,
+    }),
+  })
+    .then((res) => {
+      if (!res.ok) throw new Error("Failed to send");
+      return res.json();
+    })
+    .then(() => {
+      loading.classList.remove("modal__overlay--visible");
+      success.classList.add("modal__overlay--visible");
+    })
+    .catch(() => {
+      loading.classList.remove("modal__overlay--visible");
+      Toastify({
+        text: "Email service is down. Contact us directly ~ help@exportmytexts.com",
+        duration: 5000,
+        gravity: "bottom",
+        position: "center",
+        backgroundColor: "#FF6B6B",
+        stopOnFocus: true,
+      }).showToast();
+    });
+}
+
+function toggleModal() {
+  if (isModalOpen) {
+    isModalOpen = false;
+    return document.body.classList.remove("modal--open");
+  }
+  isModalOpen = true;
+  document.body.classList.add("modal--open");
+}
