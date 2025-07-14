@@ -20,6 +20,11 @@
             <figure>
                 <img id="personal-logo" src="/assets/logo.png" alt="Open Modal" onclick="toggleModal()" style="cursor: pointer;">
             </figure>
+            <button class="burger" id="burger-menu" aria-label="Open navigation" tabindex="0" onclick="toggleMenu()" style="background: none; border: none; cursor: pointer;">
+                <span style="display: block; width: 25px; height: 3px; background-color: #ADD8E6; margin: 5px 0;"></span>
+                <span style="display: block; width: 25px; height: 3px; background-color: #ADD8E6; margin: 5px 0;"></span>
+                <span style="display: block; width: 25px; height: 3px; background-color: #ADD8E6; margin: 5px 0;"></span>
+            </button>
             <ul class="nav__link--list" >
                 <li class="nav__link">
                     <a href="/index.html" class="
@@ -236,6 +241,12 @@
       const mailtoLink = `mailto:help@exportmytexts.com?subject=${encodeURIComponent(subject)}&body=${body}`;
 
       window.location.href = mailtoLink;
+    }
+  </script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.querySelector(".nav__link--list");
+      navLinks.classList.toggle("open");
     }
   </script>
 </body>

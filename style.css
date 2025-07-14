@@ -1,3 +1,117 @@
+/* Burger Menu Styles */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 1001;
+  margin-left: auto;
+}
+.burger div {
+  width: 24px;
+  height: 4px;
+  background-color: #ADD8E6;
+  margin: 3px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 550px) {
+  .burger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1001;
+  }
+  .nav__link--list {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.6); /* semi-transparent black */
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 24px 24px 24px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.2);
+  }
+  .nav__link--list.open {
+    right: 0;
+  }
+  .nav__link {
+    margin: 24px 0;
+  }
+  .nav__link--anchor {
+    font-size: 20px;
+    padding: 12px 0;
+    display: block;
+    color: #ADD8E6;
+  }
+}
+/* Burger Menu Styles */
+/* .burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  cursor: pointer;
+  width: 32px;
+  height: 32px;
+  z-index: 1001;
+}
+.burger div {
+  width: 100%;
+  height: 4px;
+  background-color: #000000;
+  margin: 4px 0;
+  border-radius: 2px;
+  transition: all 0.3s;
+}
+
+@media (max-width: 550px) {
+  .burger {
+    display: flex;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+  }
+  .nav__link--list {
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    width: 70vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.554); /* semi-transparent black */
+    backdrop-filter: blur(12px);
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 80px 24px 24px 24px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    box-shadow: -2px 0 16px rgba(0,0,0,0.2);
+  }
+  .nav__link--list.open {
+    right: 0;
+  }
+  .nav__link {
+    margin: 24px 0;
+  }
+  .nav__link--anchor {
+    font-size: 20px;
+    padding: 12px 0;
+    display: block;
+    color: #ADD8E6;
+  }
+} */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
 /* Added Merriweather font import */
 @import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
@@ -299,13 +413,15 @@ NAVIGATION
 */
 nav {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   max-width: 1200px;
   margin: 0 auto;
   height: 100px;
   padding: 0 20px;
+  position: relative;
 }
 .nav__link--list {
   display: flex;
@@ -774,9 +890,7 @@ SHAPES
     font-size: 18px;
   }
 
-  .nav__link:first-child{
-    display: none;
-  }
+  
 
   .project__description--para{
     display: none;

@@ -1,3 +1,39 @@
+document.addEventListener("DOMContentLoaded", function () {
+  const burger = document.getElementById("burger-menu");
+  const navLinks = document.getElementById("nav-links");
+
+  if (burger && navLinks) {
+    // Toggle on click or keyboard
+    burger.addEventListener("click", () => {
+      navLinks.classList.toggle("open");
+    });
+
+    burger.addEventListener("keypress", (e) => {
+      if (e.key === "Enter" || e.key === " ") {
+        navLinks.classList.toggle("open");
+      }
+    });
+
+    // Close on outside click
+    document.addEventListener("click", (event) => {
+      if (
+        navLinks.classList.contains("open") &&
+        !burger.contains(event.target) &&
+        !navLinks.contains(event.target)
+      ) {
+        navLinks.classList.remove("open");
+      }
+    });
+
+    // Close on ESC key
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape" && navLinks.classList.contains("open")) {
+        navLinks.classList.remove("open");
+      }
+    });
+  }
+});
+
 let isModalOpen = false;
 let contrastToggle = false;
 const scaleFactor = 1 / 20;
@@ -16,11 +52,7 @@ function moveBackground(event) {
 
 function toggleContrast() {
   contrastToggle = !contrastToggle;
-  if (contrastToggle) {
-    document.body.classList.add("dark-theme");
-  } else {
-    document.body.classList.remove("dark-theme");
-  }
+  document.body.classList.toggle("dark-theme", contrastToggle);
 }
 
 function contact(event) {
@@ -32,9 +64,7 @@ function contact(event) {
 
   fetch("http://localhost:3000/send", {
     method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-    },
+    headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       name: event.target.user_name.value,
       email: event.target.user_email.value,
@@ -63,10 +93,6 @@ function contact(event) {
 }
 
 function toggleModal() {
-  if (isModalOpen) {
-    isModalOpen = false;
-    return document.body.classList.remove("modal--open");
-  }
-  isModalOpen = true;
-  document.body.classList.add("modal--open");
+  isModalOpen = !isModalOpen;
+  document.body.classList.toggle("modal--open", isModalOpen);
 }

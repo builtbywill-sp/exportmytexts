@@ -16,38 +16,27 @@
 
 <body class="dark">
     <section id="landing-page" onmousemove="moveBackground(event)">
-        <nav>
+        <nav class="nav">
             <figure>
                 <img id="personal-logo" src="/assets/logo.png" alt="Open Modal" onclick="toggleModal()" style="cursor: pointer;">
             </figure>
-            <ul class="nav__link--list" >
-              <li class="nav__link">
-                    <a href="/index.html" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black
-                    ">Home</a>
+            <button class="burger" id="burger-menu" aria-label="Open navigation" tabindex="0" style="background: none; border: none; cursor: pointer;">
+                <span style="display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px 0;"></span>
+                <span style="display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px 0;"></span>
+                <span style="display: block; width: 25px; height: 3px; background-color: #fff; margin: 5px 0;"></span>
+            </button>
+            <ul class="nav__link--list" id="nav-links">
+                <li class="nav__link">
+                    <a href="/index.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">Home</a>
                 </li>
                 <li class="nav__link">
-                    <a href="/about.html" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black
-                    ">About</a>
+                    <a href="/about.html" class="nav__link--anchor link__hover-effect link__hover-effect--black">About</a>
                 </li>
                 <li class="nav__link">
-                    <a href="#pricing" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black
-                    ">Pricing</a>
+                    <a href="#pricing" class="nav__link--anchor link__hover-effect link__hover-effect--black">Pricing</a>
                 </li>
                 <li class="nav__link" onclick="toggleModal()">
-                    <a href="#" class="
-                    nav__link--anchor
-                    link__hover-effect
-                    link__hover-effect--black
-                    ">Contact</a>
+                    <a href="#" class="nav__link--anchor link__hover-effect link__hover-effect--black">Contact</a>
                 </li>
             </ul>
         </nav>
@@ -219,6 +208,7 @@
 
 
     </footer>
+</footer>
   <script>
     function openMailClient(event) {
       event.preventDefault();
@@ -233,6 +223,13 @@
       window.location.href = mailtoLink;
     }
   </script>
+  <script>
+    function toggleMenu() {
+      const navLinks = document.getElementById("nav-links");
+      navLinks.classList.toggle("open");
+    }
+  </script>
+</body>
 </body>
 
 </html>
