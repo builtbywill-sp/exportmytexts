@@ -1,22 +1,31 @@
 @import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Roboto:ital,wdth,wght@0,75..100,100..900;1,75..100,100..900&display=swap");
+/* Added Merriweather font import */
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 html{
   scroll-behavior: smooth;
 }
 body {
   background-color: #121212;
   color: #e0e0e0;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Merriweather', serif;
   font-size: 1rem;
   font-weight: 400;
 }
 h1, h2, h3, strong {
   color: #ffffff;
 }
-* {
+/* Removed global font-family override from * selector */
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
+} */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 section {
@@ -43,6 +52,8 @@ p {
 .container {
   padding: 50px 0;
   width: 100%;
+  /* Removed font-family override */
+  /* font-family: "Roboto", sans-serif; */
 }
 
 
